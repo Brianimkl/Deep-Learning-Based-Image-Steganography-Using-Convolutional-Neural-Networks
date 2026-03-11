@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>殘差式影寫術</title>
+
+  <style>
+    html { background-color: #e6f3ff; }
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto;
+      max-width: 900px;
+      margin: 24px auto;
+      padding: 0 16px;
+    }
+
+    h1 { margin-bottom: 12px; }
+    h2 { margin-top: 0; }
+
+    .card {
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 16px;
+      margin: 16px 0;
+      background-color: #949449;
+    }
+
+    label { display:block; margin: 8px 0 4px; }
+
+    button {
+      padding: 8px 14px;
+      border-radius: 8px;
+      border: 1px solid #888;
+      cursor: pointer;
+      background-color: #616130;
+      color: white;
+    }
+
+    .row {
+      display:flex;
+      flex-wrap:wrap;
+      gap:16px;
+      align-items:flex-start;
+    }
+
+    .col { flex: 1 1 260px; }
+
+    img {
+      max-width: 100%;
+      border-radius: 8px;
+      background:#eef1f4;
+      border:1px solid #dcdfe6;
+    }
+
+    .hidden { display:none; }
+  </style>
+</head>
+<body>
+
+  <h1>殘差式影寫術</h1>
+
+ 
+  <div class="card">
+    <h2>隱寫</h2>
+
+    <label>Cover 圖片</label>
+    <input id="cover" type="file" accept="image/*"/>
+
+    <label>Secret 圖片</label>
+    <input id="secret" type="file" accept="image/*"/>
+
+    <div style="margin-top:10px;">
+      <button id="btn-encode">隱寫 → 產生</button>
+    </div>
+
+    <div class="row" style="margin-top:12px;">
+      <div class="col"><img id="preview-cover"></div>
+      <div class="col"><img id="preview-secret"></div>
+      <div class="col"><img id="preview-stego"></div>
+    </div>
+  </div>
+
+
+  <div class="card">
+    <h2>解碼</h2>
+
+    <label>Stego 圖片</label>
+    <input id="stego" type="file" accept="image/*"/>
+
+    <div style="margin-top:10px;">
+      <button id="btn-decode">解碼 → 還原</button>
+    </div>
+
+    <div class="row" style="margin-top:12px;">
+      <div class="col"><img id="preview-stego2"></div>
+      <div class="col"><img id="preview-recovered" class="hidden"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

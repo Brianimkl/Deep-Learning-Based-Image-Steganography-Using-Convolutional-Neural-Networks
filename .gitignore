@@ -1,0 +1,7 @@
+.venv/
+**/__pycache__/
+*.pt
+backend/runs*/
+backups/
+data/
+runs_*
